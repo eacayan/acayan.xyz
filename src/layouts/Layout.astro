@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="overflow-hidden">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +15,10 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative bg-main font-sans min-h-screen gradient-bg">
+	<body class="relative bg-main min-h-screen">
 		<slot />
+		<style is:global>
+			@import "../styles/global.css";
+		</style>
 	</body>
 </html>
