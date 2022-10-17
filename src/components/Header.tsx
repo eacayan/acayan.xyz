@@ -5,10 +5,10 @@ const Header = () => {
 	const [open, setOpen] = useState<boolean>(false);
 
 	return (
-		<header className="flex h-[8vh] items-center justify-end py-5 px-6">
-			{/* <div className="text-white">
-				<a href="/">Logo</a>
-			</div> */}
+		<header className="flex h-[8vh] items-center justify-between py-5 px-6 md:justify-end md:py-8 md:px-9 md:pb-0">
+			<a href="/" className="md:hidden">
+				<img src="/logo.svg" className="w-8 " />
+			</a>
 			<div className="flex items-center">
 				<button className="md:hidden" onClick={() => setOpen(!open)}>
 					<img src="images/menu.svg" alt="Navigation Menu" />
@@ -17,7 +17,7 @@ const Header = () => {
 					{MENU_ITEMS?.map(({ title, href }, i) => (
 						<li key={title} className={i === 0 ? "pr-6" : i === MENU_ITEMS.length - 1 ? "pl-6" : "px-6"}>
 							<a className="group transition-all duration-300 ease-in-out hover:text-rose-500" href={href}>
-								<span className="bg-gradient-to-r from-rose-600 to-yellow-600 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px]">
+								<span className="bg-gradient-to-r from-rose-600 to-yellow-600 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-500 ease-out group-hover:bg-[length:100%_2px] md:text-xl">
 									{title}
 								</span>
 							</a>

@@ -16,10 +16,25 @@ module.exports = {
 		},
 	},
 	plugins: [
-		plugin(function ({ addComponents }) {
+		plugin(function ({ addComponents, theme }) {
 			addComponents({
 				".social-icon": {
-					"@apply w-4 h-4 md:w-6 md:h-6 transition-all duration-300 ease-in-out text-white hover:text-rose-500": {},
+					"@apply w-6 h-6 md:w-8 md:h-8 transition-all duration-300 ease-in-out text-white hover:text-rose-500": {},
+				},
+				".gradient-bg": {
+					"@apply before:absolute before:w-[130%] before:h-[60vh] before:top-[0] before:-left-[90px] before:-z-10 md:before:h-[95vh] md:before:-left-[120px]":
+						{},
+					"&::before": {
+						backgroundImage: `radial-gradient(at 65% 75%, ${theme(
+							"colors.main",
+						)} 0, transparent 100%),radial-gradient(at 30% 35%, ${theme(
+							"colors.rose.600",
+						)} 0, transparent 35%),radial-gradient(at 65% 42%, ${theme(
+							"colors.yellow.500",
+						)} 0, transparent 50%),radial-gradient(at 34% 57%, ${theme(
+							"colors.pink.700",
+						)} 0, transparent 50%),radial-gradient(at 76% 53%, ${theme("colors.violet.700")} 0, transparent 64%)`,
+					},
 				},
 			});
 		}),
