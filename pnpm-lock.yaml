@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/react': ^1.1.4
   '@astrojs/tailwind': ^2.0.1
   '@fontsource/space-grotesk': ^4.5.10
+  '@headlessui/react': ^1.7.3
   '@types/react': ^18.0.21
   '@typescript-eslint/eslint-plugin': ^5.38.1
   '@typescript-eslint/parser': ^5.38.1
@@ -29,6 +30,7 @@ dependencies:
   '@astrojs/react': 1.1.4_biqbaboplfbrettd7655fr4n2y
   '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
   '@fontsource/space-grotesk': 4.5.10
+  '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   astro: 1.3.1
   astro-icon: 0.7.3
   react: 18.2.0
@@ -487,6 +489,17 @@ packages:
 
   /@fontsource/space-grotesk/4.5.10:
     resolution: {integrity: sha512-Ua+3NeVpUbVrF4F0I5posgZ0/SvpX0ijmwU4MI43cormzOP6r6Z09+BWwhS85+wMJsM+ravc+65fa/rqAZQ3wg==}
+    dev: false
+
+  /@headlessui/react/1.7.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-LGp06SrGv7BMaIQlTs8s2G06moqkI0cb0b8stgq7KZ3xcHdH3qMP+cRyV7qe5x4XEW/IGY48BW4fLesD6NQLng==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.10.6:

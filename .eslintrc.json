@@ -14,7 +14,8 @@
 		"ecmaVersion": 2021,
 		"sourceType": "module",
 		"ecmaFeatures": {
-			"jsx": true
+			"jsx": true,
+			"tsx": true
 		}
 	},
 	"overrides": [
@@ -24,6 +25,7 @@
 			"plugins": ["@typescript-eslint", "react", "tailwindcss"],
 			"extends": ["plugin:tailwindcss/recommended", "plugin:prettier/recommended"],
 			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
 				"project": "./tsconfig.json"
 			},
 			"rules": {
