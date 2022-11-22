@@ -1,13 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Home from "../components/Home.astro";
-import Header from "../components/Header";
+import Home from "../layouts/Home.astro";
+import Projects from "../layouts/Projects.astro";
+
 import "@fontsource/space-grotesk";
 ---
 
 <Layout title="Home | Ellice Acayan - Software Developer">
-	<Header client:load />
-	<main>
+	<main class="w-full h-full">
 		<Home />
+    <Projects />
 	</main>
 </Layout>

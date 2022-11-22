@@ -9,13 +9,13 @@ const Header = () => {
 	const handleOpen = () => setOpen(!open);
 
 	return (
-		<header className="flex h-[8vh] items-center justify-between py-5 px-6 md:justify-end md:py-8 md:px-9 md:pb-0">
+		<header className="flex h-[8vh] w-full items-center justify-between py-5 px-6 md:justify-end md:py-8 md:px-9 md:pb-0">
 			<a href="/" className="md:hidden">
-				<img src="/logo.svg" className="w-8 " />
+				<img src="icons/logo.svg" className="w-8 " />
 			</a>
 			<div className="flex items-center">
 				<button className="md:hidden" onClick={() => setOpen(!open)}>
-					<img src="images/menu.svg" alt="Navigation Menu" />
+					<img src="icons/menu.svg" alt="Navigation Menu" />
 				</button>
 				<Sidebar open={open} onHandleOpen={handleOpen} />
 				<ul className="hidden divide-x divide-gray-600 text-white md:flex md:items-center">
