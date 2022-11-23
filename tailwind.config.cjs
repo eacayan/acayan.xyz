@@ -4,6 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+	safelist: [{ pattern: /(from|to|text)-(red|blue|yellow|rose|violet)-(500|600|700|800|900)/ }],
 	theme: {
 		extend: {
 			colors: {
@@ -61,7 +62,8 @@ module.exports = {
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
 				".social-icon": {
-					"@apply w-6 h-6 md:w-8 md:h-8 transition-all duration-300 ease-in-out text-white hover:text-rose-500": {},
+					"@apply w-6 h-6 md:w-8 md:h-8 transition-all duration-300 ease-in-out text-white hover:text-rose-500 animate-breathe animate-none":
+						{},
 				},
 				".gradient-bg": {
 					"@apply before:absolute before:w-[130%] before:h-[60vh] before:top-[110px] before:-left-[90px] before:-z-10 md:before:w-full md:before:h-[85vh] md:before:top-[65px] md:before:left-0":

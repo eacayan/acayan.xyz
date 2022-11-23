@@ -1,37 +1,47 @@
 ---
 import { Icon } from "astro-icon";
+
+const { projects } = Astro.props;
+const projectColors = {
+  "rally": {
+    primary: "rose-600",
+    secondary: "yellow-500"
+  },
+  "giffords": {
+    primary: "red-800",
+    secondary: "blue-900"
+  }
+}
 ---
 
 <div class="relative group">
 	<div
-		class="absolute -inset-0.5 bg-gradient-to-r from-rose-600 to-yellow-500 rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+		class={`absolute -inset-0.5 bg-gradient-to-r from-${projects.pColor} to-${projects.sColor} rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`}
 	>
 	</div>
-	<a class="relative flex flex-col rounded-lg bg-black" href="https://rally.io" target="_blank">
+	<a class="relative flex flex-col rounded-lg bg-black" href={projects.href} target="_blank">
 		<div class="grid grid-cols-[3fr_1fr] p-6">
 			<div class="flex flex-col">
 				<div class="flex gap-x-3 items-center mb-2">
-					<img src="images/rally-icon.png" class="w-8" />
-					<h3 class="text-white text-3xl">Rally</h3>
+					<img src={projects.logo} alt={projects.alt} class="w-8" />
+					<h3 class="text-white text-3xl">{projects.name}</h3>
 				</div>
 				<div class="flex flex-col mt-3">
-					<h4 class="text-white text-lg pb-3">Front End</h4>
+					<h4 class="text-white text-lg pb-3">{projects.role}</h4>
 					<div class="h-[1px] w-8 border-t-[1px] border-white border-dashed"></div>
-					<p class="text-white text-md pt-3">
-						Rally is a DeFi network that allows content creators to make and host their own cryptocurrency.
-					</p>
+					<p class="text-white text-md pt-3">{projects.description}</p>
 				</div>
 			</div>
 			<div class="flex flex-col justify-center items-end gap-y-3">
-				<img src="icons/react.svg" class="w-6" />
-				<img src="icons/next.svg" class="w-6" />
-				<img src="icons/graphql.svg" class="w-6" />
+        {projects.technologies?.map(({ logo, alt }) => (
+          <img src={logo} alt={alt} class="w-6" />
+        ))}
 			</div>
 		</div>
 		<div
-			class="flex gap-x-2 border-t-[1px] border-gray-600 text-xl uppercase text-rose-600 p-6 group-hover:text-gray-100 transition duration-200"
+			class={`flex gap-x-2 border-t-[1px] border-gray-600 text-xl uppercase text-${projects.sColor} p-6 group-hover:text-gray-100 transition duration-200`}
 		>
-			<span>Visit Website</span>
+			<span>{projects.cta}</span>
 			<Icon name="lucide:arrow-right-circle" class="w-6" />
 		</div>
 	</a>
