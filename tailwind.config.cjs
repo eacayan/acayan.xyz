@@ -4,7 +4,9 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-	safelist: [{ pattern: /(from|to|text)-(red|blue|yellow|rose|violet)-(500|600|700|800|900)/ }],
+	safelist: [
+		{ pattern: /(from|to|text)-(red|blue|yellow|gray|cyan|lime|rose|amber|stone|purple)-(500|600|700|800|900)/ },
+	],
 	theme: {
 		extend: {
 			colors: {
