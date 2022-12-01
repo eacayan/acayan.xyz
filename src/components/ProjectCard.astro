@@ -1,20 +1,21 @@
 ---
 import { Icon } from "astro-icon";
 
-const { projects } = Astro.props;
+const { projects, index } = Astro.props;
 ---
 
-<div class="relative group">
+<div class={`relative group ${index === 0 && "col-span-full"}`}>
 	<div
 		class={`absolute -inset-0.5 bg-gradient-to-r from-${projects.pColor} to-${projects.sColor} rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`}
 	>
 	</div>
 	<a class="relative h-full flex flex-col pt-6 rounded-lg bg-black lg:pt-10" href={projects.href} target="_blank">
-    <div class="flex gap-x-3 pl-6 items-center mb-2 lg:gap-x-6 lg:pl-8">
-      <img src={projects.logo} alt={projects.alt} class="w-8 lg:w-10" />
-      <h3 class="text-white text-3xl lg:text-4xl">{projects.name}</h3>
+    <div class="flex gap-x-3 px-6 items-center mb-2 lg:gap-x-6 lg:px-8">
+      <img src={projects.logo} alt={projects.alt} class="w-6 lg:w-10" />
+      <h3 class="text-white text-2xl lg:text-4xl">{projects.name}</h3>
+      {projects.status === "wip" && <Icon name="mdi:progress-wrench" class="w-6 text-gold lg:w-9" alt="Work in progress" /> }
     </div>
-		<div class="grid grid-cols-[3fr_1fr] px-6 my-5 md:min-h-[305px] lg:px-10">
+		<div class="grid grid-cols-[3fr_1fr] px-6 mt-2 mb-5 md:min-h-[305px] lg:px-10">
 			<div class="flex flex-col">
 				<div class="flex flex-col mt-3">
 					<h4 class="text-white text-lg pb-3 md:text-[1.25rem] lg:text-3xl lg:pb-5">{projects.role}</h4>
@@ -27,10 +28,10 @@ const { projects } = Astro.props;
 			</div>
 		</div>
 		<div
-			class={`flex gap-x-2 border-t-[1px] border-gray-600 text-xl uppercase text-${projects.pColor} p-6 group-hover:text-gray-100 transition duration-200 lg:gap-x-4 lg:px-10 lg:text-2xl xl:py-10 xl:text-3xl`}
+			class={`flex gap-x-2 border-t-[1px] border-gray-600 text-xl uppercase text-${projects.pColor} p-6 lg:gap-x-3 lg:px-10 lg:text-2xl xl:py-8 `}
 		>
-			<span>{projects.cta}</span>
-			<Icon name="lucide:arrow-right-circle" class="w-6 group-hover:translate-x-2 transition duration-200 lg:w-9" />
+			<span class="group-hover:text-gray-100 transition duration-200">{projects.cta}</span>
+			<Icon name="lucide:arrow-right-circle" class="w-6 group-hover:text-gray-100 group-hover:translate-x-1 transition duration-200 lg:w-7" />
 		</div>
 	</a>
 </div>

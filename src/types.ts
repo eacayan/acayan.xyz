@@ -25,6 +25,11 @@ type TailwindColors =
 type TailwindLuminance = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 type ThemeColors = `${TailwindColors}-${TailwindLuminance}`;
 
+enum StatusEnum {
+	completed,
+	wip,
+}
+
 export interface IMenuItems {
 	title: string;
 	href: string;
@@ -36,6 +41,7 @@ export interface IProjectItems {
 	alt: string;
 	href: string;
 	role: string;
+	status: keyof typeof StatusEnum;
 	description: string;
 	cta: string;
 	pColor: ThemeColors;

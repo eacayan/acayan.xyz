@@ -4,7 +4,7 @@ import { MENU_ITEMS } from "../constants";
 
 interface ISidebarProps {
 	open: boolean;
-	onHandleOpen: (e: React.UIEvent<HTMLButtonElement | HTMLDivElement>) => void;
+	onHandleOpen: (e: React.UIEvent<HTMLButtonElement | HTMLLIElement | HTMLDivElement>) => void;
 }
 
 const Sidebar = ({ open = false, onHandleOpen }: ISidebarProps) => (
@@ -28,7 +28,7 @@ const Sidebar = ({ open = false, onHandleOpen }: ISidebarProps) => (
 					</button>
 					<ul className="mt-60 flex flex-col items-center space-y-8 sm:mt-44 sm:space-y-14">
 						{MENU_ITEMS?.map(({ title, href }) => (
-							<li key={title}>
+							<li key={title} onClick={onHandleOpen}>
 								<a
 									className="group text-[1.75rem] text-white transition-all duration-300 ease-in-out hover:text-rose-500 sm:text-5xl"
 									href={href}

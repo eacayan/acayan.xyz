@@ -4,12 +4,12 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { PROJECT_ITEMS } from "../constants";
 ---
 
-<section class="flex flex-col justify-center px-6 py-5 md:px-10 lg:px-16 lg:py-10 gap-y-6 xl:px-28">
-	<h2 class="flex text-center justify-center pb-5 text-gold text-[2.5rem] lg:pb-7 lg:text-[3.5rem]">Selected Projects</h2>
+<section id="projects" class="flex flex-col justify-center px-6 py-5 md:px-10 lg:px-16 lg:py-10 gap-y-6 xl:px-28">
+	<h2 class="flex text-center justify-center pb-5 text-gold text-[2.5rem] lg:pb-7 lg:text-[3.5rem]">Projects</h2>
 
 	<div class="flex flex-col gap-y-10 md:grid md:grid-cols-2 md:gap-8 lg:gap-12 xl:gap-14">
-    {PROJECT_ITEMS.map((projects) => (
-      <ProjectCard projects={projects} />
+    {PROJECT_ITEMS.map((projects, index) => (
+      <ProjectCard projects={projects} key={projects.name} index={index} />
     ))}
 	</div>
 </section>
