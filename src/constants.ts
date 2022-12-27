@@ -1,10 +1,10 @@
-import { IMenuItems, IProjectItems } from "./types";
+import { IMenuItems, IProjectItems, IExpItems } from "./types";
 
 export const MENU_ITEMS: IMenuItems[] = [
 	{ title: "Home", href: "/" },
 	{ title: "Projects", href: "#projects" },
-	{ title: "Resume", href: "/resume" },
-	{ title: "Blog", href: "/blog" },
+	{ title: "Experience", href: "#experience" },
+	// { title: "Blog", href: "/blog" },
 ];
 
 export const PROJECT_ITEMS: IProjectItems[] = [
@@ -55,7 +55,7 @@ export const PROJECT_ITEMS: IProjectItems[] = [
 		description:
 			"Giffords is an American organization dedicated to fighting gun violence. They offer political, legal, and policy expertise with regards to gun safety.",
 		cta: "Visit Website",
-		pColor: "cyan-700",
+		pColor: "cyan-600",
 		sColor: "red-700",
 		technologies: [
 			{ alt: "Javascript logo", logo: "icons/javascript.svg" },
@@ -72,8 +72,8 @@ export const PROJECT_ITEMS: IProjectItems[] = [
 		description:
 			"Formerly Sonabank, Primis Bank is a local financial institution based in Virginia, USA. They reinvent the banking experience by being heavily tech-focused.",
 		cta: "Visit Website",
-		pColor: "lime-700",
-		sColor: "gray-600",
+		pColor: "lime-600",
+		sColor: "gray-500",
 		technologies: [
 			{ alt: "Javascript logo", logo: "icons/javascript.svg" },
 			{ alt: "Wordpress logo", logo: "icons/wordpress.svg" },
@@ -95,5 +95,22 @@ export const PROJECT_ITEMS: IProjectItems[] = [
 			{ alt: "Javascript logo", logo: "icons/javascript.svg" },
 			{ alt: "Wordpress logo", logo: "icons/wordpress.svg" },
 		],
+	},
+];
+
+export const EXP_ITEMS: IExpItems[] = [
+	{
+		company: "Accelo",
+		period: "January 2022 - Present",
+		description:
+			"Maintainer for Accelo's component library which is built using Typescript, React, Next.js, MUI, and Storybook",
+		isCurrent: true,
+	},
+	{
+		company: "Code & Theory",
+		period: "June 2019 - January 2022",
+		description:
+			"Front end development for clients from various industries. Different technologies are used primarily, Javascript, React, Node.js, and PHP",
+		isCurrent: false,
 	},
 ];

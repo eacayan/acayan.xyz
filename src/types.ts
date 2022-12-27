@@ -48,3 +48,10 @@ export interface IProjectItems {
 	sColor: ThemeColors;
 	technologies: { alt: string; logo: string }[];
 }
+
+export interface IExpItems {
+	company: string;
+	period: string;
+	description: string;
+	isCurrent: boolean;
+}

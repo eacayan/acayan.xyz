@@ -1,0 +1,16 @@
+---
+import { EXP_ITEMS } from "../constants";
+---
+
+<ol class="relative border-l border-gray-200 dark:border-gray-700">                  
+    {EXP_ITEMS.map(exp => (
+      <li class={`${exp.isCurrent ? "mb-10 ml-6" : "ml-6"}`}>            
+          <span class={`flex absolute -left-3 justify-center items-center md:mt-[0.1875rem] w-6 h-6 rounded-full ring-2 bg-main ${exp.isCurrent ? "ring-lime-400" : "ring-rose-600"}`}>
+            <div class={`absolute -inset-0.5 ${exp.isCurrent ? "bg-lime-600" : "bg-rose-700"} rounded-full blur opacity-60 -z-10`}></div>
+          </span>
+          <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white md:text-2xl">{exp.company}</h3>
+          <time class="block mb-2 text-sm font-normal leading-none text-gray-400 md:text-base lg:text-lg">{exp.period}</time>
+          <p class="mb-4 text-base font-normal text-white md:text-lg lg:text-xl xl:text-2xl">{exp.description}</p>
+      </li>
+    ))}
+</ol>

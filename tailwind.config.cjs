@@ -66,8 +66,8 @@ module.exports = {
 	plugins: [
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
-				".social-icon": {
-					"@apply w-6 h-6 md:w-8 md:h-8 transition-all duration-300 ease-in-out text-white hover:text-rose-500 animate-breathe animate-none":
+				".clickable-icon": {
+					"@apply transition-all duration-300 ease-in-out text-white hover:text-rose-500 animate-breathe animate-none":
 						{},
 				},
 				".gradient-bg": {
